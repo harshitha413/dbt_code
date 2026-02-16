@@ -6,7 +6,17 @@ sources:
       tables:
         - name: raw_customerdata
         - name: raw_orders
-        - name: stg_order
-        - name: STG_ITEMS_DATA
+
+          columns:
+            - name: id
+              tests:
+                - unique
+                - not_null
+            - name: status
+              tests:
+                - accepted_values:
+                      values: ['placed', 'shipped', 'completed', 'returned', 'return_pending']
+        - name: customers
+        - name: emp_sal
         - name: STG_PRODUCT_DATA
         - name: STG_SUPPLIES_DATA
