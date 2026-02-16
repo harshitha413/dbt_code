@@ -45,3 +45,6 @@ models:
         +materialized: table
         +transient : false
 
+      snapshots:
+        +schema: snapshots
+
